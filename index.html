@@ -1,8 +1,91 @@
+HTML
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Simple Website</title>
+    <style>
+        /* Basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+            padding: 0.5rem;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: opacity 0.3s ease;
+        }
+        nav a:hover {
+            opacity: 0.7;
+        }
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Fade transition animation */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
 <body>
-
-<h1>Hello world</h1>
-
+    <header>
+        <h1>My Simple Website</h1>
+    </header>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <div class="content fade-in" id="home">
+        <h2>Welcome to My Website</h2>
+        <p>This is the home page content.</p>
+    </div>
+    <div class="content fade-in" id="about">
+        <h2>About Me</h2>
+        <p>Learn more about me here.</p>
+    </div>
+    <div class="content fade-in" id="contact">
+        <h2>Contact</h2>
+        <p>Contact me via email or phone.</p>
+    </div>
+    <script>
+        // Add smooth scroll behavior
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
 </body>
-</html> 
+</html>
+AI-generated code. Review and use carefully. More info on FAQ.
+This code creates a basic website with a responsive navigation menu and fade-in transitions when switching between pages. Feel free to customize it further to suit your needs! 😊
